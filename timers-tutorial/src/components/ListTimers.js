@@ -9,12 +9,8 @@ export default function ListTimers() {
     <div>
       {timers.map((timer, i) => {
         return (
-          <div key={i}>
-            <TimerView
-              name={timer.name}
-              time={timer.time}
-              isRunning={timer.isRunning}
-            />
+          <div>
+            <TimerView key={`timer-${i}`} index={i} {...timer} />
           </div>
         );
       })}
