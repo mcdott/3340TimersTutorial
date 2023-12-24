@@ -9,7 +9,11 @@ function formatTime(time) {
   const minutes = totalMinutes % 60;
   const seconds = totalSeconds % 60;
 
-  return `${hours}:${minutes}:${seconds}`;
+  // Pad numbers below 10 with a 0
+  const pad = (num) => num.toString().padStart(2, "0");
+
+  // Format the time as HH:MM:SS
+  return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
 }
 
 export default function TimerView({ index, name, time, isRunning }) {
