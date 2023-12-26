@@ -25,10 +25,15 @@ export const timersSlice = createSlice({
         }
       });
     },
+
+    resetTimer: (state, action) => {
+      state.value[action.payload].time = 0;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addTimer, toggleTimer, update } = timersSlice.actions;
+export const { addTimer, toggleTimer, update, resetTimer } =
+  timersSlice.actions;
 
 export default timersSlice.reducer;
